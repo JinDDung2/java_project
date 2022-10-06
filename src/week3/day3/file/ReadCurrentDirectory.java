@@ -9,6 +9,15 @@ public class ReadCurrentDirectory {
 
         for (File file : files) {
             System.out.println(file);
+
+                    /*/a_text
+                    ./out
+                    ./java-project.iml
+                    ./textfile현
+                    ./.gitignore
+                    ./.git
+                    ./.idea
+                    ./src*/
         }
     }
 }
