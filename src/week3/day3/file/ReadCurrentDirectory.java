@@ -13,7 +13,7 @@ public class ReadCurrentDirectory {
                     /*/a_text
                     ./out
                     ./java-project.iml
-                    ./textfile현
+                    ./textfile
                     ./.gitignore
                     ./.git
                     ./.idea
