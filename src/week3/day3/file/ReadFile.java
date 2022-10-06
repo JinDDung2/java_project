@@ -6,6 +6,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ReadFile {
+    String filePath;
+
+    public ReadFile(String filePath) {
+        this.filePath = filePath;
+    }
 
     char readOneByte(String filename) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename), 16 * 2024);
@@ -19,7 +24,7 @@ public class ReadFile {
     }
     String readNByte(String filename, int n) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename), 16 * 2024);
-        String result="";
+        String result = "";
         for (int i = 0; i < n; i++) {
             result += (char) br.read();
         }
