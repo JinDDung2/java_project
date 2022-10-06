@@ -22,6 +22,7 @@ public class ReadFile {
         BufferedReader br = new BufferedReader(new FileReader(filename), 16 * 2024);
         return (char) br.read() + "" + (char) br.read();
     }
+
     String readNByte(String filename, int n) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filename), 16 * 2024);
         String result = "";
@@ -30,4 +31,23 @@ public class ReadFile {
         }
         return result;
     }
+
+    String readLine(String filename) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        String result = br.readLine();
+        return result;
+    }
+
+    String readAllLine(String filename) throws IOException {
+        BufferedReader br = new BufferedReader(new FileReader(filename));
+        String result = "";
+        String temp;
+
+        while ((temp = br.readLine()) != null) {
+            result += temp;
+        }
+        return result;
+    }
+
+
 }
