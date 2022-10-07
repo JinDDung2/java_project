@@ -1,5 +1,9 @@
 package week3.day4;
 
+import week3.day3.file.ReadFile;
+
+import java.util.Map;
+
 public class PopulationMove {
     private int fromSido;
     private int toSido;
@@ -20,6 +24,28 @@ public class PopulationMove {
         int fromSido = Integer.parseInt(dataList[0]);
         int toSido = Integer.parseInt(dataList[6]);
         return new PopulationMove(fromSido, toSido);
+    }
+
+    // sido를 매핑하는 메서드
+    public Map<Integer, String> sidoMap(Map<Integer, String> sidoName) {
+        sidoName.put(11, "서울특별시");
+        sidoName.put(21, "부산광역시");
+        sidoName.put(22, "대구광역시");
+        sidoName.put(23, "인천광역시");
+        sidoName.put(24, "광주광역시");
+        sidoName.put(25, "대전광역시");
+        sidoName.put(26, "울산광역시");
+        sidoName.put(29, "세종특별자치시");
+        sidoName.put(31, "경기도");
+        sidoName.put(32, "강원도");
+        sidoName.put(33, "충청북도");
+        sidoName.put(34, "충청남도");
+        sidoName.put(35, "전라북도");
+        sidoName.put(36, "전라남도");
+        sidoName.put(37, "경상북도");
+        sidoName.put(38, "경상남도");
+        sidoName.put(39, "제주특별자치도");
+        return sidoName;
     }
 
 
