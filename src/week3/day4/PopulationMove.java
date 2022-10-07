@@ -14,6 +14,12 @@ public class PopulationMove {
         this.toSido = toSido;
     }
 
+    // 생성자 오버로딩(int --> String)
+    public PopulationMove(String fromSido, String toSido) {
+        this.fromSido = Integer.parseInt(fromSido);
+        this.toSido = Integer.parseInt(toSido);
+    }
+
     // 1: 전입행정구역시도코드, 7:전출행정구역시도코드
     public PopulationMove parse (String data) {
         String[] dataList = data.split(",");
