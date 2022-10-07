@@ -14,13 +14,9 @@ public class PopulationMove {
         this.toSido = toSido;
     }
 
-    // 데이터 가공 메서드
-    public String[] getData(String data) {
-        String[] dataList = data.split(",");
-        return dataList;
-    }
     // 1: 전입행정구역시도코드, 7:전출행정구역시도코드
-    public PopulationMove parse (String[] dataList) {
+    public PopulationMove parse (String data) {
+        String[] dataList = data.split(",");
         int fromSido = Integer.parseInt(dataList[0]);
         int toSido = Integer.parseInt(dataList[6]);
         return new PopulationMove(fromSido, toSido);
