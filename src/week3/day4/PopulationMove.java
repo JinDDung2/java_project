@@ -1,55 +1,51 @@
 package week3.day4;
 
-import week3.day3.file.ReadFile;
-
+import java.util.HashMap;
 import java.util.Map;
 
 public class PopulationMove {
-    private int fromSido;
-    private int toSido;
+    private int toSido; // 전입
+    private int fromSido; // 전출
+
+    static Map<Integer, String> sidoMap = new HashMap<>();
 
     // 생성자에 맴버변수 2개 받기
-    public PopulationMove(int fromSido, int toSido) {
-        this.fromSido = fromSido;
+
+    // int 데이터를 받을 때 생성자
+    public PopulationMove(int toSido, int fromSido) {
         this.toSido = toSido;
+        this.fromSido = fromSido;
     }
 
-    // 생성자 오버로딩(int --> String)
-    public PopulationMove(String fromSido, String toSido) {
-        this.fromSido = Integer.parseInt(fromSido);
+    // String 데이터를 받을 때 int 타입으로 변환한 생성자
+    public PopulationMove(String toSido, String fromSido) {
         this.toSido = Integer.parseInt(toSido);
+        this.fromSido = Integer.parseInt(fromSido);
     }
 
-    // 1: 전입행정구역시도코드, 7:전출행정구역시도코드
-    public PopulationMove parse (String data) {
-        String[] dataList = data.split(",");
-        int fromSido = Integer.parseInt(dataList[0]);
-        int toSido = Integer.parseInt(dataList[6]);
-        return new PopulationMove(fromSido, toSido);
-    }
+    public static String sidoMapping (int code) {
+        HashMap<Integer, String> sidoMap = new HashMap<>();
 
-    // sido를 매핑하는 메서드
-    public Map<Integer, String> sidoMap(Map<Integer, String> sidoName) {
-        sidoName.put(11, "서울특별시");
-        sidoName.put(21, "부산광역시");
-        sidoName.put(22, "대구광역시");
-        sidoName.put(23, "인천광역시");
-        sidoName.put(24, "광주광역시");
-        sidoName.put(25, "대전광역시");
-        sidoName.put(26, "울산광역시");
-        sidoName.put(29, "세종특별자치시");
-        sidoName.put(31, "경기도");
-        sidoName.put(32, "강원도");
-        sidoName.put(33, "충청북도");
-        sidoName.put(34, "충청남도");
-        sidoName.put(35, "전라북도");
-        sidoName.put(36, "전라남도");
-        sidoName.put(37, "경상북도");
-        sidoName.put(38, "경상남도");
-        sidoName.put(39, "제주특별자치도");
-        return sidoName;
-    }
+        sidoMap.put(11, "서울특별시");
+        sidoMap.put(26, "부산광역시");
+        sidoMap.put(27, "대구광역시");
+        sidoMap.put(28, "인천광역시");
+        sidoMap.put(29, "광주광역시");
+        sidoMap.put(30, "대전광역시");
+        sidoMap.put(31, "울산광역시");
+        sidoMap.put(36, "세종특별자치시");
+        sidoMap.put(41, "경기도");
+        sidoMap.put(42, "강원도");
+        sidoMap.put(43, "충청북도");
+        sidoMap.put(44, "충청남도");
+        sidoMap.put(45, "전라북도");
+        sidoMap.put(46, "전라남도");
+        sidoMap.put(47, "경상북도");
+        sidoMap.put(48, "경상남도");
+        sidoMap.put(50, "제주특별자치도");
 
+        return sidoMap.get(code);
+    }
 
     public int getFromSido() {
         return fromSido;
