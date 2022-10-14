@@ -5,6 +5,12 @@ import java.util.Arrays;
 public class InsertionSort {
 
     public int[] sort(int[] arr) {
+        if (arr[1] < arr[0]) {
+            int temp = 0;
+            temp = arr[0];
+            arr[0] = arr[1];
+            arr[1] = temp;
+        }
 
         return arr;
     }
