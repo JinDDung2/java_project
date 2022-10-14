@@ -48,7 +48,7 @@ public class InsertionSort {
     }
 
     public static void main(String[] args) {
-        // 첫번째 인덱스엥서 출발
+
         int[] arr = {8, 5, 6, 2, 4};
         InsertionSort sortArr = new InsertionSort();
 //        int[] result = sortArr.sortV1(arr, 2);
