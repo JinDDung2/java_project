@@ -36,14 +36,28 @@ public class Star {
             System.out.println();
         }
     }
+    
+    public void pyramidReverse(int num) {
+        for (int i = num-1; i >0 ; i--) {
+            for (int j = num - i; j > 0; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 2 * i - 1; k > 0; k--) {
+                System.out.print(str);
+            }
+            System.out.println();
+        }
+    }
 
 
 
     public static void main(String[] args) {
         Star star = new Star();
-        int num = 4;
+        int num = 5;
 //        star.rightTriangleV1();
 //        star.rightTriangleV2(num);
         star.pyramid(num);
+        star.pyramidReverse(num);
     }
+
 }
