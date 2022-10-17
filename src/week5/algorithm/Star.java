@@ -1,7 +1,9 @@
 package week5.algorithm;
 
 public class Star {
-    String str;
+    String str= "*";
+
+    public Star() {}
 
     public Star(String str) {
         this.str = str;
