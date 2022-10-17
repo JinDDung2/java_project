@@ -49,6 +49,10 @@ public class Star {
         }
     }
 
+    public void repeatExercise(int num) {
+        System.out.println(str.repeat(num));
+    }
+
 
 
     public static void main(String[] args) {
@@ -56,8 +60,9 @@ public class Star {
         int num = 5;
 //        star.rightTriangleV1();
 //        star.rightTriangleV2(num);
-        star.pyramid(num);
-        star.pyramidReverse(num);
+//        star.pyramid(num);
+//        star.pyramidReverse(num);
+        star.repeatExercise(num);
     }
 
 }
