@@ -17,6 +17,15 @@ public class SquarerStar {
         }
     }
 
+    public void printTriangle(int size, int cnt) {
+        if (cnt > size) return;
+
+        System.out.print("*".repeat(cnt));
+        System.out.println();
+        printTriangle(size, ++cnt);
+
+    }
+
     public static void main(String[] args) {
         SquarerStar star = new SquarerStar();
 
@@ -40,5 +49,8 @@ public class SquarerStar {
         *****
         *****
         */
+
+        System.out.println("---재귀 직각삼각형---");
+        star.printTriangle(size, 1);
     }
 }
