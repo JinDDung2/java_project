@@ -38,6 +38,14 @@ public class SquarerStar {
         }
     }
 
+    public void printParallelogram(int size) {
+        for (int i = 1; i < size+1; i++) {
+            System.out.print(" ".repeat(size-i));
+            System.out.print("*".repeat(size));
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         SquarerStar star = new SquarerStar();
 
@@ -55,5 +63,8 @@ public class SquarerStar {
 
         System.out.println("---가운데 뚫린 직사각형---");
         star.printSquareV2(size);
+
+        System.out.println("---평행사변형(단, 왼쪽공백)---");
+        star.printParallelogram(size);
     }
 }
