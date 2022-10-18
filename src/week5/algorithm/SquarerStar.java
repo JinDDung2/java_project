@@ -10,10 +10,35 @@ public class SquarerStar {
             System.out.println();
         }
     }
+
+    public void printRectangle(int width, int height) {
+        for (int i = 0; i < height; i++) {
+            System.out.println("*".repeat(width));
+        }
+    }
+
     public static void main(String[] args) {
         SquarerStar star = new SquarerStar();
 
+        System.out.println("---정사각형---");
         int size = 4;
         star.printSquareMatrix(size);
+        /* 정사각형
+        ****
+        ****
+        ****
+        ****
+        */
+
+        System.out.println("---직사각형---");
+        int width = 5;
+        int height = 3;
+        star.printRectangle(width, height);
+
+        /* 직사각형
+        *****
+        *****
+        *****
+        */
     }
 }
