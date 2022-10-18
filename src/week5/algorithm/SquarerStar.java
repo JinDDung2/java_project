@@ -26,31 +26,34 @@ public class SquarerStar {
 
     }
 
+    public void printSquareV2(int size) {
+        for (int i = 0; i < size; i++) {
+            if (i == 0 || i == size-1) {
+                System.out.println("*".repeat(size));
+            } else {
+                System.out.print("*");
+                System.out.print(" ".repeat(size-2));
+                System.out.print("*\n");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         SquarerStar star = new SquarerStar();
 
         System.out.println("---정사각형---");
         int size = 4;
         star.printSquareMatrix(size);
-        /* 정사각형
-        ****
-        ****
-        ****
-        ****
-        */
 
         System.out.println("---직사각형---");
         int width = 5;
         int height = 3;
         star.printRectangle(width, height);
 
-        /* 직사각형
-        *****
-        *****
-        *****
-        */
-
         System.out.println("---재귀 직각삼각형---");
         star.printTriangle(size, 1);
+
+        System.out.println("---가운데 뚫린 직사각형---");
+        star.printSquareV2(size);
     }
 }
