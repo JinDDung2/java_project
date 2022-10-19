@@ -11,11 +11,15 @@ public class Stack01 {
         this.arr = new int[size];
     }
 
-    public int[] push(int value) {
+    public void push(int value) {
         arr[pointer] = value;
         pointer++;
+    }
 
-        return arr;
+    public int pop() {
+        pointer--;
+        int value = arr[pointer];
+        return value;
     }
 
     public int[] getArr() {
