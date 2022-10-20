@@ -2,27 +2,27 @@ package week5.algorithm;
 
 public class Stack01 {
 
-    private int[] arr = new int[10000];
+    private Integer[] arr;
     private int pointer = 0;
 
-    public Stack01() {}
+    public Stack01() {
+        this.arr = new Integer[10000];
+    }
 
     public Stack01(int size) {
-        this.arr = new int[size];
+        this.arr = new Integer[size];
     }
 
     public void push(int value) {
-        arr[pointer] = value;
-        pointer++;
+        arr[pointer++] = value;
     }
 
     public int pop() {
-        pointer--;
-        int value = arr[pointer];
+        int value = arr[--pointer];
         return value;
     }
 
-    public int[] getArr() {
+    public Integer[] getArr() {
         return arr;
     }
 }
