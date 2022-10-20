@@ -27,6 +27,14 @@ public class Stack01 {
         return value;
     }
 
+    public Integer peek() {
+        if (this.isEmpty()) {
+            throw new EmptyStackException();
+        }
+        int value = arr[pointer-1];
+        return value;
+    }
+
     public boolean isEmpty() {
         return pointer == 0;
     }

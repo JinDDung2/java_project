@@ -27,7 +27,7 @@ class StackTest {
     }
 
     @Test
-    @DisplayName("pop이 잘 되어있는가")
+    @DisplayName("pop 확인")
     void pushAndPop() {
         Stack01 stack = new Stack01(10);
         Integer[] arr = stack.getArr();
@@ -60,9 +60,21 @@ class StackTest {
     }
 
     @Test
-    @DisplayName("모든 기능 잘 되어있는가")
-    void pushAndPopAndPeekAndCount() {
+    @DisplayName("peek 잘 되어있는가")
+    void peek() {
+        Stack01 stack = new Stack01(10);
+        stack.push(12);
+        assertEquals(12, stack.peek());
 
+    }
+
+    @Test
+    @DisplayName("peek 오류확인")
+    void peekError() {
+        Stack01 stack = new Stack01(100);
+        assertThrows(EmptyStackException.class, () -> {
+            stack.peek();
+        });
     }
 
 }
