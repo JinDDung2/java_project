@@ -54,7 +54,7 @@ class StackTest {
         Stack01 stack = new Stack01(10);
         assertTrue(stack.isEmpty());
         stack.push(100);
-        assertTrue(stack.isEmpty());
+        assertFalse(stack.isEmpty());
         stack.pop();
         assertTrue(stack.isEmpty());
     }
