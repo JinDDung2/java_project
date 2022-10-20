@@ -1,5 +1,7 @@
 package week5.algorithm;
 
+import java.util.EmptyStackException;
+
 public class Stack01 {
 
     private Integer[] arr;
@@ -18,11 +20,19 @@ public class Stack01 {
     }
 
     public int pop() {
+        if (this.isEmpty()) {
+            throw new EmptyStackException();
+        }
         int value = arr[--pointer];
         return value;
+    }
+
+    public boolean isEmpty() {
+        return pointer == 0;
     }
 
     public Integer[] getArr() {
         return arr;
     }
+
 }
