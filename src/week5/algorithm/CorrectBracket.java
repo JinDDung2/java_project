@@ -28,4 +28,20 @@ class CorrectBracket {
 
         return answer;
     }
+
+    boolean solution2(String s) {
+        int num = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if ( num < 0 ) break;
+            if (ch == '(') {
+                num += 1;
+            } else if (ch == ')') {
+                num -= 1;
+            }
+        }
+
+
+        return num == 0? true : false;
+    }
 }
