@@ -15,7 +15,7 @@ class CorrectBracket {
             }
 
             if (ch == ')') {
-                if (stack.size() == 0) {
+                if (stack.empty()) {
                     return false;
                 }
                 else {
@@ -24,7 +24,7 @@ class CorrectBracket {
             }
         }
 
-        answer = stack.size() == 0 ? true : false;
+        answer = stack.empty()? true : false;
 
         return answer;
     }
@@ -45,6 +45,7 @@ class CorrectBracket {
         return num == 0? true : false;
     }
 
+    // 효율성 문제... O(N^2)
     boolean solutionV3(String s) {
         while (s.indexOf("()") >= 0) {
             s = s.replace("()", "");
