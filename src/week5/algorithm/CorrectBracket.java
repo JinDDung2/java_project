@@ -3,7 +3,7 @@ package week5.algorithm;
 import java.util.*;
 
 class CorrectBracket {
-    boolean solution(String s) {
+    boolean solutionV1(String s) {
         boolean answer = true;
         Stack<Character> stack = new Stack<>();
 
@@ -29,7 +29,7 @@ class CorrectBracket {
         return answer;
     }
 
-    boolean solution2(String s) {
+    boolean solutionV2(String s) {
         int num = 0;
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
@@ -43,5 +43,12 @@ class CorrectBracket {
 
 
         return num == 0? true : false;
+    }
+
+    boolean solutionV3(String s) {
+        while (s.indexOf("()") >= 0) {
+            s = s.replace("()", "");
+        }
+        return s.length() == 0 ? true : false;
     }
 }
