@@ -1,7 +1,6 @@
 package week6.algorithm;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class BiggestNum {
     public String solution(int[] numbers) {
