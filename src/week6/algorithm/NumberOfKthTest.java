@@ -15,6 +15,9 @@ class NumberOfKthTest {
         int[] answer = sol.solution(array, commands);
         int[] correct = {5, 6, 3};
         assertArrayEquals(correct, answer);
+
+        int[] answer2 = sol.solutionV2(array, commands);
+        assertArrayEquals(correct, answer);
     }
 
 }
