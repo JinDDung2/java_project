@@ -6,6 +6,7 @@ public class Hash {
         for (int i = 0; i < key.length(); i++) {
             asciiSum += key.charAt(i);
         }
+
         return asciiSum % 90;
     }
 }

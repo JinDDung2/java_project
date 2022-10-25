@@ -21,7 +21,7 @@ public class HashTable {
     public void insert(String key, Integer value) {
         int hashCode = hash(key);
         table[hashCode] = value;
-        System.out.printf("%s님은 %s방에 들어가시면 됩니다. \n", key, hashCode);
+        System.out.printf("%s님은 %s방에 들어가시면 됩니다.\n", key, hashCode);
     }
 
     public int search(String key) {
