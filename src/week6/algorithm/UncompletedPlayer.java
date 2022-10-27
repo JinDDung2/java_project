@@ -4,15 +4,14 @@ import java.util.HashMap;
 
 public class UncompletedPlayer {
     public String solution(String[] participant, String[] completion) {
-        String answer = "";
         HashMap<Integer, String> players = new HashMap<>();
         int num = 0;
-
+        // participant의 길이 = completion + 1
         for (String player : participant) {
             players.put(player.hashCode(), player);
             num += player.hashCode();
         }
-        System.out.println(players);
+//        System.out.println(players);
 
         for (String completed : completion) {
             num -= completed.hashCode();
@@ -22,10 +21,10 @@ public class UncompletedPlayer {
     }
 
     public static void main(String[] args) {
-        UncompletedPlayer solution = new UncompletedPlayer();
+        UncompletedPlayer sol = new UncompletedPlayer();
         String[] participant = new String[]{"mislav", "stanko", "mislav", "ana"};
         String[] completion = new String[]{"stanko", "ana", "mislav"};
-        String answer = solution.solution(participant, completion);
+        String answer = sol.solution(participant, completion);
         System.out.println(answer);
     }
 }
