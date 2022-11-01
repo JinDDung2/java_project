@@ -5,9 +5,11 @@ public class Prime {
     public int solution(int n) {
         int answer = 0;
         for (int i = 1; i < n+1; i++) {
-            if (isPrimeV1(n) == true) {
-                answer += 1;
+            if (isPrimeV1(n)) {
+                continue;
             }
+            answer += 1;
+            System.out.println("answer = " + answer);
         }
 
         return answer;
@@ -37,6 +39,8 @@ public class Prime {
 
     // 소수인지 판별하기 3번
     public boolean isPrimeV3(int n) {
+        if (n == 0 || n == 1) return false;
+
         for (int i = 2; i < n*0.5+1; i++) {
             if (n % i == 0) return false;
         }
