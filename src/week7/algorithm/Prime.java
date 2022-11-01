@@ -35,7 +35,13 @@ public class Prime {
         return true;
     }
 
-
+    // 소수인지 판별하기 3번
+    public boolean isPrimeV3(int n) {
+        for (int i = 2; i < n*0.5+1; i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
 
     public static void main(String[] args) {
         Prime prime = new Prime();
@@ -43,5 +49,9 @@ public class Prime {
         System.out.println("result = " + result);
         boolean primeV1 = prime.isPrimeV1(5);
         System.out.println("primeV1 = " + primeV1);
+        boolean primeV2 = prime.isPrimeV2(13);
+        System.out.println("primeV2 = " + primeV2);
+        boolean primeV3 = prime.isPrimeV3(8);
+        System.out.println("primeV3 = " + primeV3);
     }
 }
