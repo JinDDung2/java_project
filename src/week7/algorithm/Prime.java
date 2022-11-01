@@ -1,6 +1,8 @@
 package week7.algorithm;
 
 public class Prime {
+
+    PrimeTemplate template;
     // 소수인 경우의 수 찾기
     public int solution(int n) {
         int answer = 0;
@@ -44,6 +46,56 @@ public class Prime {
         }
         return true;
     }
+
+    public boolean isPrimeV4(int n, PrimeTemplate template) {
+        if (n == 0 || n == 1) return false;
+
+        for (int i = 2; template.getMax(n, i); i++) {
+            if (n % i == 0) return false;
+        }
+        return true;
+    }
+    public boolean callbackV1(int n) {
+        return isPrimeV4(n, new PrimeTemplate() {
+            @Override
+            public boolean getMax(int n, int i) {
+                return i <= n;
+            }
+        });
+    }
+
+    public boolean callbackV2(int n) {
+        return isPrimeV4(n,new PrimeTemplate() {
+            @Override
+            public boolean getMax(int n, int i) {
+                return i/2 <= n;
+            }
+        });
+    }
+
+    public boolean callbackV3(int n) {
+        return isPrimeV4(n, new PrimeTemplate() {
+            @Override
+            public boolean getMax(int n, int i) {
+                return i*0.5+1 <= n;
+            }
+        });
+    }
+
+    // 템플릿 콜백
+    public boolean plain (int n, int i) {
+        return i <= n;
+    }
+
+    public boolean half (int n, int i) {
+        return i/2 <= n;
+    }
+
+    public boolean sqrt (int n, int i) {
+        return i*0.5+1 <= n;
+    }
+
+
 
     public static void main(String[] args) {
         Prime prime = new Prime();
