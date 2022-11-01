@@ -5,11 +5,9 @@ public class Prime {
     public int solution(int n) {
         int answer = 0;
         for (int i = 1; i < n+1; i++) {
-            if (isPrimeV1(n)) {
-                continue;
+            if (isPrimeV3(i)) {
+                answer += 1;
             }
-            answer += 1;
-            System.out.println("answer = " + answer);
         }
 
         return answer;
