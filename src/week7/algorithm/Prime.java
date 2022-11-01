@@ -11,7 +11,6 @@ public class Prime {
                 answer += 1;
             }
         }
-
         return answer;
     }
 
@@ -47,6 +46,7 @@ public class Prime {
         return true;
     }
 
+    // 템플릿 콜백 적용한 메서드
     public boolean isPrimeV4(int n, PrimeTemplate template) {
         if (n == 0 || n == 1) return false;
 
@@ -55,7 +55,8 @@ public class Prime {
         }
         return true;
     }
-    public boolean callbackV1(int n) {
+
+    /*public boolean callbackV1(int n) {
         return isPrimeV4(n, new PrimeTemplate() {
             @Override
             public boolean getMax(int n, int i) {
@@ -80,9 +81,9 @@ public class Prime {
                 return i*0.5+1 <= n;
             }
         });
-    }
+    }*/
 
-    // 템플릿 콜백
+    // 템플릿 콜백 느낌
     public boolean plain (int n, int i) {
         return i <= n;
     }
@@ -107,5 +108,17 @@ public class Prime {
         System.out.println("primeV2 = " + primeV2);
         boolean primeV3 = prime.isPrimeV3(8);
         System.out.println("primeV3 = " + primeV3);
+
+        boolean primeV4 = prime.isPrimeV4(13, new PrimeTemplate() {
+            @Override
+            public boolean getMax(int n, int i) {
+                return n * 0.5 + 1 < i;
+            }
+        });
+        System.out.println("primeV4 = " + primeV4);
+        System.out.println(prime.isPrimeV4(13, (a, b) -> a<b));
+        System.out.println(prime.isPrimeV4(17, (a, b) -> a<b/2));
+        System.out.println(prime.isPrimeV4(19, (a, b) -> a<b*0.5+1));
+
     }
 }
