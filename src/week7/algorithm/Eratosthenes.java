@@ -38,13 +38,25 @@ public class Eratosthenes {
             System.out.printf("%d \t", integer);
         }
 
-        // 5. 5을 제외한 3의배수 지우기
+        // 6. 5를 제외한 5의배수 지우기
         for (int i = 3; i < arrayList.size(); i++) {
             if (arrayList.get(i) % 3 == 0) {
                 arrayList.remove(i);
             }
         }
 
+        // 7. 원소의 개수와 원소 출력
+        System.out.println("arrayList.size() = " + arrayList.size());
+        for (Integer integer : arrayList) {
+            System.out.printf("%d \t", integer);
+        }
+
+        // 8. 7을 제외한 7의배수 지우기
+        for (int i = 4; i < arrayList.size(); i++) {
+            if (arrayList.get(i) % 3 == 0) {
+                arrayList.remove(i);
+            }
+        }
 
     }
 }
