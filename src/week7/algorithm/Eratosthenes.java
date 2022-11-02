@@ -58,5 +58,10 @@ public class Eratosthenes {
             }
         }
 
+        // 9. 원소의 개수와 원소 출력
+        System.out.println("arrayList.size() = " + arrayList.size());
+        for (Integer integer : arrayList) {
+            System.out.printf("%d \t", integer);
+        }
     }
 }
