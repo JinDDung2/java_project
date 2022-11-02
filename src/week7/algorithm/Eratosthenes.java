@@ -40,7 +40,7 @@ public class Eratosthenes {
 
         // 6. 5를 제외한 5의배수 지우기
         for (int i = 3; i < arrayList.size(); i++) {
-            if (arrayList.get(i) % 3 == 0) {
+            if (arrayList.get(i) % 5 == 0) {
                 arrayList.remove(i);
             }
         }
@@ -53,7 +53,7 @@ public class Eratosthenes {
 
         // 8. 7을 제외한 7의배수 지우기
         for (int i = 4; i < arrayList.size(); i++) {
-            if (arrayList.get(i) % 3 == 0) {
+            if (arrayList.get(i) % 7 == 0) {
                 arrayList.remove(i);
             }
         }
