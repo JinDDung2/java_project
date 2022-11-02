@@ -1,10 +1,57 @@
 package week7.algorithm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Eratosthenes {
+    public int getPrimeCountV1(int num) {
+        ArrayList<Integer> numList = new ArrayList<>();
+        for (int i = 2; i < num+1; i++) {
+            numList.add(i);
+        }
+
+        for (int i = 2; i < num*0.5+1; i++) {
+            for (int j = 0; j < numList.size(); j++) {
+                if (numList.get(j) % i == 0 && numList.get(j) > i) {
+                    numList.remove(j);
+                }
+            }
+        }
+        return numList.size();
+    }
+
+    public int getPrimeCountV2(int num) {
+        ArrayList<Integer> numList = new ArrayList<>();
+        for (int i = 2; i < num; i++) {
+            numList.add(i);
+        }
+
+        boolean[] memo = new boolean[numList.size()];
+        Arrays.fill(memo, true);
+        for (int i = 2; i < num*0.5+1; i++) {
+            for (int j = 0; j < numList.size(); j++) {
+                if (numList.get(j) % i == 0 && numList.get(j) > i) {
+                    memo[j] = false;
+                }
+            }
+        }
+        int count = 0;
+        for (boolean check : memo) {
+            if (check) count++;
+        }
+
+        return count;
+    }
     public static void main(String[] args) {
-        int N = 50;
+
+        Eratosthenes eratosthenes = new Eratosthenes();
+        int primeCount1 = eratosthenes.getPrimeCountV1(50);
+        System.out.println("primeCount1 = " + primeCount1);
+
+        int primeCount2 = eratosthenes.getPrimeCountV2(50);
+        System.out.println("primeCount2 = " + primeCount2);
+
+        /*int N = 50;
         ArrayList<Integer> arrayList = new ArrayList<>();
 
         // 1. 2~49 배열에 넣기
@@ -62,6 +109,6 @@ public class Eratosthenes {
         System.out.println("arrayList.size() = " + arrayList.size());
         for (Integer integer : arrayList) {
             System.out.printf("%d \t", integer);
-        }
+        }*/
     }
 }
