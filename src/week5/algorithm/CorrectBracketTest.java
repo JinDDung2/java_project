@@ -26,8 +26,8 @@ class CorrectBracketTest {
         boolean sol4 = correctBracket.solutionV3("()()()(())");
         boolean sol5 = correctBracket.solutionV3(")(()");
         boolean sol6 = correctBracket.solutionV3("(())()(()");
-        assertTrue(sol1);
-        assertFalse(sol2);
-        assertFalse(sol3);
+        assertTrue(sol4);
+        assertFalse(sol5);
+        assertFalse(sol6);
     }
 }
