@@ -1,0 +1,24 @@
+package week7.algorithm;
+
+import java.util.ArrayList;
+
+public class Eratosthenes {
+    public static void main(String[] args) {
+        int N = 50;
+        ArrayList<Integer> arrayList = new ArrayList<>();
+
+        // 1. 2~49 배열에 넣기
+        for (int i = 2; i < N; i++) {
+            arrayList.add(i);
+        }
+
+        // 2. 2를 제외한 2의배수 지우기
+        for (int i = 1; i < arrayList.size(); i++) {
+            if ( (arrayList.get(i) % 2) == 0) {
+                arrayList.remove(i);
+            }
+        }
+
+
+    }
+}
