@@ -22,12 +22,14 @@ public class Eratosthenes {
 
     public int getPrimeCountV2(int num) {
         ArrayList<Integer> numList = new ArrayList<>();
-        for (int i = 2; i < num; i++) {
+        for (int i = 2; i < num+1; i++) {
             numList.add(i);
         }
 
         boolean[] memo = new boolean[numList.size()];
         Arrays.fill(memo, true);
+//        System.out.println(Arrays.toString(memo));
+
         for (int i = 2; i < num*0.5+1; i++) {
             for (int j = 0; j < numList.size(); j++) {
                 if (numList.get(j) % i == 0 && numList.get(j) > i) {
@@ -48,7 +50,7 @@ public class Eratosthenes {
         int primeCount1 = eratosthenes.getPrimeCountV1(50);
         System.out.println("primeCount1 = " + primeCount1);
 
-        int primeCount2 = eratosthenes.getPrimeCountV2(50);
+        int primeCount2 = eratosthenes.getPrimeCountV2(5);
         System.out.println("primeCount2 = " + primeCount2);
 
         /*int N = 50;
