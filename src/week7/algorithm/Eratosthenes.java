@@ -37,5 +37,14 @@ public class Eratosthenes {
         for (Integer integer : arrayList) {
             System.out.printf("%d \t", integer);
         }
+
+        // 5. 5을 제외한 3의배수 지우기
+        for (int i = 3; i < arrayList.size(); i++) {
+            if (arrayList.get(i) % 3 == 0) {
+                arrayList.remove(i);
+            }
+        }
+
+
     }
 }
