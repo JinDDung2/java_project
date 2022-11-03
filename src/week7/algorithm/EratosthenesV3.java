@@ -10,10 +10,11 @@ public class EratosthenesV3 {
         for (int i = 0; i < memo.length; i++) {
             if (memo[i]) {
                 System.out.printf("%d, ", nums[i]);
+                cnt += 1;
             }
-            System.out.println();
-            System.out.println("size:"+ cnt);
         }
+        System.out.println();
+        System.out.println("size:"+ cnt);
     }
 
     public static int getPrimeCount(int num) {
@@ -25,17 +26,35 @@ public class EratosthenesV3 {
         for (int i = 0; i < nums.length; i++) {
             nums[i] = i + 2;
         }
-        System.out.println(Arrays.toString(nums));
+//        System.out.println(Arrays.toString(nums));
 
         for (int i = 2; i < nums.length; i+=2) {
             memo[i] = false;
         }
+        System.out.println("--- 2 이후 아래 확인--- ");
+        printNums(nums,memo);
 
+        for (int i = 4; i < nums.length; i+=3) {
+            memo[i] = false;
+        }
+        System.out.println("--- 3 이후 아래 확인--- ");
+        printNums(nums,memo);
 
+        for (int i = 8; i < nums.length; i+=5) {
+            memo[i] = false;
+        }
+        System.out.println("--- 5 이후 아래 확인--- ");
+        printNums(nums,memo);
+
+        for (int i = 12; i < nums.length; i+=7) {
+            memo[i] = false;
+        }
+        System.out.println("--- 7 이후 아래 확인--- ");
+        printNums(nums,memo);
         return count;
     }
 
     public static void main(String[] args) {
-        getPrimeCount(50);
+        int primeCount = getPrimeCount(50);
     }
 }
