@@ -6,13 +6,15 @@ import java.util.Arrays;
 public class EratosthenesV2 {
     public int getPrimeCount(int num) {
         ArrayList<Integer> numList = new ArrayList<>();
-        for (int i = 2; i < num + 1; i++) {
+        for (int i = 0; i < num + 1; i++) {
             numList.add(i);
         }
 
         boolean[] memo = new boolean[numList.size()];
         Arrays.fill(memo, true);
-        System.out.println(Arrays.toString(memo));
+        memo[0] = false;
+        memo[1] = false;
+//        System.out.println(Arrays.toString(memo));
 
         for (int i = 2; i < num * 0.5 + 1; i++) {
             if (memo[i]) {
@@ -23,6 +25,7 @@ public class EratosthenesV2 {
                 }
             }
         }
+        System.out.println(Arrays.toString(memo));
         int count = 0;
         for (boolean check : memo) {
             if (check) count++;
