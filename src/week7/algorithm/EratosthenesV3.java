@@ -5,6 +5,17 @@ import java.util.Arrays;
 
 // 수업 실습용
 public class EratosthenesV3 {
+    public static void printNums(int[] nums, boolean[] memo) {
+        int cnt = 0;
+        for (int i = 0; i < memo.length; i++) {
+            if (memo[i]) {
+                System.out.printf("%d, ", nums[i]);
+            }
+            System.out.println();
+            System.out.println("size:"+ cnt);
+        }
+    }
+
     public static int getPrimeCount(int num) {
         int count = 0;
         int[] nums = new int[num-1];
