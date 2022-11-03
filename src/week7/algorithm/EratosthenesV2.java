@@ -40,13 +40,9 @@ public class EratosthenesV2 {
         int primeCount1 = eratosthenes.getPrimeCount(50);
         System.out.println("primeCount1 = " + primeCount1);
 
-        int primeCount2 = eratosthenes.getPrimeCount(5);
+        int primeCount2 = eratosthenes.getPrimeCount(1000000);
         System.out.println("primeCount2 = " + primeCount2);
 
-        int n = 50;
-        for (int i = 2; i <n+1; i++) {
-            System.out.printf("i:%d, i*2:%d \t", i, i*2);
-        }
 
     }
 }
