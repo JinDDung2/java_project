@@ -3,8 +3,8 @@ package week7.algorithm;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Eratosthenes {
-    public int getPrimeCountV1(int num) {
+public class EratosthenesV1 {
+    public int getPrimeCount(int num) {
         ArrayList<Integer> numList = new ArrayList<>();
         for (int i = 2; i < num+1; i++) {
             numList.add(i);
@@ -20,37 +20,13 @@ public class Eratosthenes {
         return numList.size();
     }
 
-    public int getPrimeCountV2(int num) {
-        ArrayList<Integer> numList = new ArrayList<>();
-        for (int i = 2; i < num+1; i++) {
-            numList.add(i);
-        }
-
-        boolean[] memo = new boolean[numList.size()];
-        Arrays.fill(memo, true);
-//        System.out.println(Arrays.toString(memo));
-
-        for (int i = 2; i < num*0.5+1; i++) {
-            for (int j = 0; j < numList.size(); j++) {
-                if (numList.get(j) % i == 0 && numList.get(j) > i) {
-                    memo[j] = false;
-                }
-            }
-        }
-        int count = 0;
-        for (boolean check : memo) {
-            if (check) count++;
-        }
-
-        return count;
-    }
     public static void main(String[] args) {
 
-        Eratosthenes eratosthenes = new Eratosthenes();
-        int primeCount1 = eratosthenes.getPrimeCountV1(50);
+        EratosthenesV1 eratosthenes = new EratosthenesV1();
+        int primeCount1 = eratosthenes.getPrimeCount(50);
         System.out.println("primeCount1 = " + primeCount1);
 
-        int primeCount2 = eratosthenes.getPrimeCountV2(5);
+        int primeCount2 = eratosthenes.getPrimeCount(5);
         System.out.println("primeCount2 = " + primeCount2);
 
         /*int N = 50;
