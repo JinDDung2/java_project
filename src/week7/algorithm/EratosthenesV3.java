@@ -14,8 +14,13 @@ public class EratosthenesV3 {
         for (int i = 0; i < nums.length; i++) {
             nums[i] = i + 2;
         }
-
         System.out.println(Arrays.toString(nums));
+
+        for (int i = 2; i < nums.length; i+=2) {
+            memo[i] = false;
+        }
+
+
         return count;
     }
 
