@@ -11,12 +11,22 @@ public class SecretMap {
         String[] numArr1 = new String[n];
         String[] numArr2 = new String[n];
 
+        // 비트연산자 | 활용하기
         for (int i = 0; i < n; i++) {
+            int decimalNum = arr1[i] | arr2[i];
+            String binaryNum = Integer.toBinaryString(decimalNum);
+            // n글자수
+            binaryNum = String.format("%" + n + "s", binaryNum).replaceAll("1", "#").replaceAll("0", " ");
+            answer[i] = binaryNum;
+        }
+
+        /*for (int i = 0; i < n; i++) {
             numArr1[i] = Integer.toBinaryString(arr1[i]);
             numArr2[i] = Integer.toBinaryString(arr2[i]);
         }
 
-        /*System.out.println("numArr2 = " + Arrays.toString(numArr2));
+        // 자릿수가 다 다르네?
+        System.out.println("numArr2 = " + Arrays.toString(numArr2));
         System.out.println("numArr1 = " + Arrays.toString(numArr1));
         numArr2 = [11110, 1, 10101, 10001, 11100]
         numArr1 = [1001, 10100, 11100, 10010, 1011]*/
