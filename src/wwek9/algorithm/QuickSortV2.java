@@ -17,9 +17,9 @@ public class QuickSortV2 {
 
         while (leftIdx <= rightIdx) {
             // left 증가
-            if (arr[leftIdx] < pivot) leftIdx++;
+            while (arr[leftIdx] < pivot) leftIdx++;
             // right 감소
-            if (arr[rightIdx] > pivot) rightIdx--;
+            while (arr[rightIdx] > pivot) rightIdx--;
             System.out.println("leftIdx = " + leftIdx);
             System.out.println("rightIdx = " + rightIdx);
             if (leftIdx <= rightIdx) {
