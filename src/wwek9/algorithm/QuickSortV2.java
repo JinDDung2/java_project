@@ -9,7 +9,7 @@ public class QuickSortV2 {
     }
 
     public static void main(String[] args) {
-        int[] arr = {20, 18, 5, 19, 25, 5, 50, 40};
+        int[] arr = {20, 18, 5, 19, 40, 50, 5, 25};
         int leftIdx = 0;
         int rightIdx = arr.length - 1;
         int pivot = arr[arr.length / 2];
@@ -22,11 +22,14 @@ public class QuickSortV2 {
             if (arr[rightIdx] > pivot) rightIdx--;
             System.out.println("leftIdx = " + leftIdx);
             System.out.println("rightIdx = " + rightIdx);
-            /*if (leftIdx <= rightIdx) {
+            if (leftIdx <= rightIdx) {
                 int temp = arr[leftIdx];
                 arr[leftIdx] = arr[rightIdx];
                 arr[rightIdx] = temp;
-            }*/
+                leftIdx++;
+                rightIdx--;
+            }
         }
+        System.out.println("arr = " + Arrays.toString(arr));
     }
 }
