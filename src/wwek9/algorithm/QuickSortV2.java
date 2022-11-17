@@ -12,7 +12,7 @@ public class QuickSortV2 {
     }
 
     public static int divideTwoGroup(int[] arr, int leftIdx, int rightIdx) {
-        int pivot = arr[(leftIdx+rightIdx) / 2];
+        int pivot = arr[(leftIdx + rightIdx) / 2];
 
         while (leftIdx <= rightIdx) {
             // left 증가
@@ -20,10 +20,11 @@ public class QuickSortV2 {
             // right 감소
             while (arr[rightIdx] > pivot) rightIdx--;
 
-            swap(arr, leftIdx, rightIdx);
-            leftIdx++;
-            rightIdx--;
-
+            if (leftIdx <= rightIdx) {
+                swap(arr, leftIdx, rightIdx);
+                leftIdx++;
+                rightIdx--;
+            }
         }
         return leftIdx;
     }
@@ -55,7 +56,7 @@ public class QuickSortV2 {
             }
         }
         System.out.println("arr = " + Arrays.toString(arr));*/
-        sort(arr, 0, arr.length-1);
+        sort(arr, 0, arr.length - 1);
         System.out.println("arr = " + Arrays.toString(arr));
     }
 }
