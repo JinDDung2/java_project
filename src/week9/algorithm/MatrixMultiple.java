@@ -1,4 +1,4 @@
-package wwek9.algorithm;
+package week9.algorithm;
 
 public class MatrixMultiple {
     public int[][] solution(int[][] arr1, int[][] arr2) {

@@ -1,4 +1,4 @@
-package wwek9.algorithm;
+package week9.algorithm;
 
 import java.util.ArrayList;
 import java.util.List;

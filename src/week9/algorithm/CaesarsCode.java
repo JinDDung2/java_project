@@ -1,4 +1,4 @@
-package wwek9.algorithm;
+package week9.algorithm;
 
 public class CaesarsCode {
     public static String solution(String s, int n) {
