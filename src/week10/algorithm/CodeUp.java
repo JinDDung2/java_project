@@ -16,11 +16,25 @@ public class CodeUp {
         else return codeUp1856(n - 3) + codeUp1856(n - 2) + codeUp1856(n - 1);
     }
 
+    public void codeUp1859(int n) {
+        if (n <= 0) return;
+        System.out.print("*");
+        codeUp1859(n-1);
+    }
+
+    public void print(int now, int n) {
+        if (now > n) return;
+        codeUp1859(now);
+        System.out.println();
+        print(now+1, n);
+    }
+
     public static void main(String[] args) {
         CodeUp codeUp = new CodeUp();
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 //        codeUp.codeUp1852(n, 1);
-        System.out.println(codeUp.codeUp1856(n));
+//        System.out.println(codeUp.codeUp1856(n));
+        codeUp.print(1, n);
     }
 }
