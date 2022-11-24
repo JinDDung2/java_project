@@ -22,11 +22,22 @@ public class CodeUp {
         codeUp1859(n-1);
     }
 
-    public void print(int now, int n) {
+    public void printV1(int now, int n) {
         if (now > n) return;
         codeUp1859(now);
         System.out.println();
-        print(now+1, n);
+        printV1(now+1, n);
+    }
+
+    public String codeUp1860(int n) {
+        if (n <= 0) return "";
+        return codeUp1860(n - 1) + n + " ";
+    }
+
+    public void printV2(int n) {
+        if (n <= 0) return;
+        printV2(n-1);
+        System.out.println(codeUp1860(n));
     }
 
     public static void main(String[] args) {
@@ -35,6 +46,7 @@ public class CodeUp {
         int n = sc.nextInt();
 //        codeUp.codeUp1852(n, 1);
 //        System.out.println(codeUp.codeUp1856(n));
-        codeUp.print(1, n);
+//        codeUp.printV1(1, n);
+        codeUp.printV2(n);
     }
 }
