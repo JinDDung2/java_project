@@ -11,6 +11,17 @@ public class Gcd {
         return 1;
     }
 
+    public int gcdV2(int a, int b) {
+        int gcd = 0;
+        for (int i = Math.min(a, b);  i>0 ; i--) {
+            if (a % i == 0 && b % i == 0) {
+                gcd = i;
+                break;
+            }
+        }
+        return gcd;
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int first = sc.nextInt();
@@ -18,5 +29,7 @@ public class Gcd {
         Gcd sol = new Gcd();
         int gcd = sol.gcd(first, second);
         System.out.println("gcd = " + gcd);
+        int gcdV2 = sol.gcdV2(first, second);
+        System.out.println("gcdV2 = " + gcdV2);
     }
 }
