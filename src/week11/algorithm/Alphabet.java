@@ -24,7 +24,13 @@ public class Alphabet {
         System.out.println("list2 = " + list2);
     }
 
+    public static void print2(char c) {
+        if (c > 'Z') return;
+        System.out.println(c);
+        print2((char) (c+1));
+    }
+
     public static void main(String[] args) {
-        print();
+        print2('A');
     }
 }
