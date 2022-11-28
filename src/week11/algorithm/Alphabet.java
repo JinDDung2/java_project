@@ -24,13 +24,14 @@ public class Alphabet {
         System.out.println("list2 = " + list2);
     }
 
-    public static void print2(char c) {
+    public static void print2(char c, String prefix) {
+        if (prefix.length() > 4) return;
         if (c > 'Z') return;
-        System.out.println(c);
-        print2((char) (c+1));
+        System.out.println(prefix + c);
+        print2((char) (c+1), prefix);
     }
 
     public static void main(String[] args) {
-        print2('A');
+        print2('A', "AA");
     }
 }
