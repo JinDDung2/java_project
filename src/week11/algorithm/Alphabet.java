@@ -24,14 +24,19 @@ public class Alphabet {
         System.out.println("list2 = " + list2);
     }
 
-    public static void print2(char c, String prefix) {
-        if (prefix.length() > 4) return;
-        if (c > 'Z') return;
-        System.out.println(prefix + c);
-        print2((char) (c+1), prefix);
+    public static void print2(String prefix, int max) {
+        if (prefix.length() >= max) {
+            System.out.println(prefix);
+            return;
+        }
+
+
+        for (char c = 'A'; c <= 'Z'; c++) {
+            print2(prefix + c, max);
+        }
     }
 
     public static void main(String[] args) {
-        print2('A', "AA");
+        print2("", 2);
     }
 }
