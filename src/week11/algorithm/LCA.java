@@ -6,8 +6,8 @@ public class LCA {
     public static void distanceOfNode(int a, int b, int count) {
 //        System.out.printf("a=%d, b=%d, count=%d\n", a, b, count);
         if (a == b) System.out.println(count);
-        else if (a > b) distanceOfNode(a / 2, b, count + 1);
-        else if (b > a) distanceOfNode(a, b / 2, count + 1);
+        else if (a > b) distanceOfNode(Math.floorDiv(a, 2), b, count + 1);
+        else if (b > a) distanceOfNode(a, Math.floorDiv(b, 2), count + 1);
     }
 
     public static void main(String[] args) {
