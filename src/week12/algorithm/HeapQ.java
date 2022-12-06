@@ -28,7 +28,12 @@ public class HeapQ {
         if (rightIdx < arr.length && arr[rightIdx] > arr[greaterIdx]) {
             greaterIdx = rightIdx;
         }
-        swap(arr, parentIdx, greaterIdx);
+
+        // 교환이 일어난 경우
+        if (greaterIdx != parentIdx) {
+            swap(arr, parentIdx, greaterIdx);
+            heapV2(arr, greaterIdx);
+        }
 //        System.out.println("arr = " + Arrays.toString(arr));
 //        heapV2(arr, parentIdx+1);
         return arr;
@@ -41,8 +46,13 @@ public class HeapQ {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{6, 5, 7, 8};
-        int[] result = heapV2(arr, 0);
-        System.out.println("result = " + Arrays.toString(result));
+//        int[] arr = new int[]{6, 5, 7, 8};
+        int[] arr = new int[]{5, 8, 4, 7, 3, 2, 9, 6, 7};
+        for (int i = (arr.length-2); i >=0 ; i--) {
+            arr = heapV2(arr, i);
+            System.out.println("arr = " + Arrays.toString(arr));
+        }
+
+        System.out.println("Last = " + Arrays.toString(arr));
     }
 }
