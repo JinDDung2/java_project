@@ -13,7 +13,7 @@ public class HeapQ {
         return arr;
     }
 
-    public static int[] heapV2(int[] arr, int parentIdx) {
+    public static int[] heapV2(int[] arr, int parentIdx, int arrSize) {
 //        if (2*parentIdx+1 > arr.length-1) return arr;
 //        System.out.println("parentIdx = " + parentIdx);
 
@@ -21,38 +21,43 @@ public class HeapQ {
         int rightIdx = 2 * parentIdx + 2;
         int greaterIdx = parentIdx;
 
-        if (leftIdx < arr.length && arr[leftIdx] > arr[greaterIdx]) {
+        if (leftIdx < arrSize && arr[leftIdx] > arr[greaterIdx]) {
             greaterIdx = leftIdx;
         }
 
-        if (rightIdx < arr.length && arr[rightIdx] > arr[greaterIdx]) {
+        if (rightIdx < arrSize && arr[rightIdx] > arr[greaterIdx]) {
             greaterIdx = rightIdx;
         }
 
         // 교환이 일어난 경우
         if (greaterIdx != parentIdx) {
             swap(arr, parentIdx, greaterIdx);
-            heapV2(arr, greaterIdx);
+            heapV2(arr, greaterIdx, arrSize);
         }
 //        System.out.println("arr = " + Arrays.toString(arr));
 //        heapV2(arr, parentIdx+1);
         return arr;
     }
 
-    private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    private static void swap(int[] arr, int idx1, int idx2) {
+        int temp = arr[idx1];
+        arr[idx1] = arr[idx2];
+        arr[idx2] = temp;
     }
 
     public static void main(String[] args) {
-//        int[] arr = new int[]{6, 5, 7, 8};
         int[] arr = new int[]{5, 8, 4, 7, 3, 2, 9, 6, 7};
-        for (int i = (arr.length-2); i >=0 ; i--) {
-            arr = heapV2(arr, i);
+        int[] arr2 = new int[]{10, 9, 5, 8, 3, 2, 4, 6, 7, 1};
+        for (int i = (arr2.length-2)/2; i >=0 ; i--) {
+            arr = heapV2(arr2, i, arr2.length);
+//            System.out.println("arr = " + Arrays.toString(arr));
+        }
+        // 정렬
+        for (int i = arr.length-1; i > 0; i--) {
+            swap(arr2, 0, i);
+            arr2 = heapV2(arr2, 0, i);
             System.out.println("arr = " + Arrays.toString(arr));
         }
 
-        System.out.println("Last = " + Arrays.toString(arr));
     }
 }
