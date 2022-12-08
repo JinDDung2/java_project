@@ -10,11 +10,19 @@ public class Fibo {
         return memo[n];
     }
 
+    public static int fiboV0(int n) {
+        if (n <= 0) return -1;
+        if (n == 1 || n == 2) return 1;
+        else return fiboV0(n - 1) + fiboV0(n - 2);
+    }
+
     public static void main(String[] args) {
         int n = 8;
         int[] memo = new int[n + 1];
         int result = fibo(n, memo);
         System.out.println("result = " + result);
+        int result2 = fiboV0(8);
+        System.out.println("result2 = " + result2);
     }
 
 }
