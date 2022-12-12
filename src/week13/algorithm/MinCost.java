@@ -1,5 +1,7 @@
 package week13.algorithm;
 
+import java.util.Arrays;
+
 public class MinCost {
     public static int move(int[][] arr, int a, int b) {
 
@@ -12,12 +14,15 @@ public class MinCost {
                 } else if (i != 0 && j != 0) {
                     int m;
                     m = Math.min(arr[i - 1][j], arr[i][j - 1]);
-                    m = Math.max(m, arr[i - 1][j - 1]);
+                    m = Math.min(m, arr[i - 1][j - 1]);
                     arr[i][j] += m;
                 }
             }
         }
-        return arr[a - 1][b - 1];
+        for (int[] ints : arr) {
+            System.out.println("ints = " + Arrays.toString(ints));
+        }
+        return arr[a][b];
 
     }
 
