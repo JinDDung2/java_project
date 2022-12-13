@@ -17,10 +17,7 @@ public class DP {
         Pair[][] dp = new Pair[arr.length][arr.length];
 
         for (int i = 0; i < dp.length; i++) {
-            for (int j = 0; j < dp[0].length; j++) {
-                Pair temp = new Pair(arr[j], 0);
-                if (i==j) dp[i][j] = temp;
-            }
+            dp[i][i] = new Pair(arr[i], 0);
         }
 
         for (Pair[] pairs : dp) {
