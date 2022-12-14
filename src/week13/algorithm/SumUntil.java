@@ -35,8 +35,23 @@ public class SumUntil {
 
     }
 
+    public static void sumUntilV2(int[] arr) {
+        int[][] dp = new int[arr.length][arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i; j < arr.length; j++) {
+                if (j == 0) dp[i][j] = arr[i];
+                else dp[i][j] = dp[i][j - 1] + arr[j];
+            }
+        }
+        for (int[] intsV2 : dp) {
+            System.out.println("intsV2 = " + Arrays.toString(intsV2));
+        }
+    }
+
     public static void main(String[] args) {
         int[] coins = {2, 7, 40, 19};
         sumUntil(coins);
+        sumUntilV2(coins);
     }
 }
